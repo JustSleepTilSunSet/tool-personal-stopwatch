@@ -5,3 +5,4 @@
  2. Select `Run` from option bar on vscode.
  3. Click `Start debuging`
  4. Run through `gcc.exe`.
+- The application is for `Windows` only.
