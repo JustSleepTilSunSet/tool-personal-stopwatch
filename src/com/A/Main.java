@@ -1,19 +1,31 @@
 package com.A;
 import com.A.Frame;
 import com.A.Constants;
+import com.A.Label;
 import java.util.*;
 import java.lang.Thread;
+import javax.swing.JLabel;
 
 public class Main{
     public static void main(String[]args){
-        Constants.TestLabelAnimation();
+        Constants.LabelAnimation();
         Frame frame = new Frame(Constants.TITLE);
-        frame
+        Frame workFrame = frame
             .setFrame(Constants.WIDTH,Constants.HEIGHT)
             .setLeftPanel()
             .setRightPanel()
-            .setLayout()
-            .getFrame()
-            .updateLabel();
+            .setLayout();
+        Label Label1 = new Label(workFrame.getCurrentFrame(), 4,"TASK#1");
+        workFrame.addLabelToLeftPanel(Label1.getJLabel());
+        Label1.updateLabel();
+        Label Label2 = new Label(workFrame.getCurrentFrame(), 4,"TASK#2");
+        workFrame.addLabelToLeftPanel(Label2.getJLabel());
+        Label2.updateLabel();
+        Label Label3 = new Label(workFrame.getCurrentFrame(), "Testing");
+        workFrame.addLabelToLeftPanel(Label2.getJLabel());
+        workFrame.addLabelToRightPanel(Label3.getJLabel());
+        workFrame
+            .showFrame();
+
     }
 }

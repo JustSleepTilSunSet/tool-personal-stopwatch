@@ -12,14 +12,17 @@ public class Frame{
     JLabel rightLabel = new JLabel("Right Panel");
     JPanel leftPanel = new JPanel(new BorderLayout());
     JPanel rightPanel = new JPanel();
-    JLabel testing = null;
     public Frame(String title){
         jf = new JFrame(title);
     }
 
-    public Frame getFrame(){
+    public JFrame getCurrentFrame(){
+        return this.jf;
+    }
+
+    public Frame showFrame(){
         this.jf.setVisible(true);
-        return this; 
+        return this;
     }
 
     public Frame setFrame(int width,int height){
@@ -30,20 +33,6 @@ public class Frame{
         }finally{
             return this;
         }
-    }
-
-    public void updateLabel(){
-        JLabel rightLabel = this.rightLabel;
-        javax.swing.Timer timer = new javax.swing.Timer(250, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                rightLabel.setText(Integer.toString((int)Math.round(Math.random() * 100)));
-            }
-        });
-
-        timer.setRepeats(true);
-        timer.setCoalesce(true);
-        timer.start();
     }
 
     public static  JLabel createNewLabel(Object content){
@@ -59,16 +48,24 @@ public class Frame{
         return this;
     }
 
-    public Frame setLeftPanel(){
-        this.leftPanel.setLayout(new BoxLayout(this.leftPanel, BoxLayout.Y_AXIS));
-        
-        this.leftPanel.add(createNewLabel(1));
-        this.leftPanel.add(createNewLabel(2));
+    public Frame addLabelToLeftPanel(JLabel label){
+        this.leftPanel.add(label);
         return this;
     }
 
-    public Frame setRightPanel(){ 
-        this.rightPanel.add(this.rightLabel);
+    public Frame setRightPanel(){
+        this.rightPanel.setLayout(new BoxLayout(this.rightPanel, BoxLayout.Y_AXIS));
         return this;
     }
+
+    public Frame addLabelToRightPanel(JLabel label){
+        this.rightPanel.add(label);
+        return this;
+    }
+
+    public Frame setLeftPanel(){
+        this.leftPanel.setLayout(new BoxLayout(this.leftPanel, BoxLayout.Y_AXIS));
+        return this;
+    }
+
 }
