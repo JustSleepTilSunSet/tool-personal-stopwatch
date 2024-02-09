@@ -63,6 +63,10 @@ public class Frame{
         return this;
     }
 
+    public Frame addCheckboxToLeftPanel(Checkbox box){
+        this.leftPanel.add(box);
+        return this;
+    }
     public Frame setLeftPanel(){
         this.leftPanel.setLayout(new BoxLayout(this.leftPanel, BoxLayout.Y_AXIS));
         return this;
