@@ -19,18 +19,18 @@ public class Main{
             .setLeftPanel()
             .setRightPanel()
             .setLayout();
-        Label Label1 = new Label(workFrame.getCurrentFrame(), 4,"TASK#1");
-        workFrame.addLabelToLeftPanel(Label1.getJLabel());
-        Label1.updateLabel();
-        Label Label2 = new Label(workFrame.getCurrentFrame(), 4,"TASK#2");
-        workFrame.addLabelToLeftPanel(Label2.getJLabel());
-        Label2.updateLabel();
-        Label Label3 = new Label(workFrame.getCurrentFrame(), "Testing");
-        workFrame.addLabelToLeftPanel(Label2.getJLabel());
-        workFrame.addLabelToRightPanel(Label3.getJLabel());
-        TaskCheckBox tcb = new TaskCheckBox(workFrame.getCurrentFrame(), 4,"TASK#2");
-        tcb.updateLabel();
-        workFrame.addCheckboxToLeftPanel(tcb.getCheckBox());
+        TaskCheckBox tcb2 = new TaskCheckBox(3,"hola");
+        tcb2.toSetCurrentJPanel(workFrame.getLeftPanel());
+        tcb2.updateLabel();
+        workFrame.addCheckboxToLeftPanel(tcb2.getCheckBox());
+        TaskCheckBox tcb1 = new TaskCheckBox(3,"hola");
+        tcb1.toSetCurrentJPanel(workFrame.getLeftPanel());
+        tcb1.updateLabel();
+        workFrame.addCheckboxToLeftPanel(tcb1.getCheckBox());
+        TaskCheckBox tcb3 = new TaskCheckBox(3,"hola");
+        tcb3.toSetCurrentJPanel(workFrame.getLeftPanel());
+        tcb3.updateLabel();
+        workFrame.addCheckboxToLeftPanel(tcb3.getCheckBox());
         workFrame
             .showFrame();
 

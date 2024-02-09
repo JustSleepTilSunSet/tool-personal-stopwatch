@@ -67,6 +67,15 @@ public class Frame{
         this.leftPanel.add(box);
         return this;
     }
+
+    public JPanel getLeftPanel(){
+        return this.leftPanel;
+    }
+
+    public JPanel getRightPanel(){
+        return this.rightPanel;
+    }
+
     public Frame setLeftPanel(){
         this.leftPanel.setLayout(new BoxLayout(this.leftPanel, BoxLayout.Y_AXIS));
         return this;
