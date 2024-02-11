@@ -3,6 +3,7 @@ import com.A.Frame;
 import com.A.Constants;
 import com.A.Label;
 import com.A.TaskCheckBox;
+import com.A.ButtonTemplate;
 import java.util.*;
 import javax.swing.*;
 import java.awt.*;
@@ -31,6 +32,8 @@ public class Main{
         tcb3.toSetCurrentJPanel(workFrame.getLeftPanel());
         tcb3.updateLabel();
         workFrame.addCheckboxToLeftPanel(tcb3.getCheckBox());
+        ButtonTemplate submitBtn = new ButtonTemplate();
+        workFrame.addButtonToRightPanel(submitBtn);
         workFrame
             .showFrame();
 

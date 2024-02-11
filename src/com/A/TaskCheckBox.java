@@ -43,7 +43,7 @@ public class TaskCheckBox implements ActionListener{
     }
 
     public void showMessageWin(){
-         Object[] options = { "OK" };
+        Object[] options = { "OK" };
         JOptionPane.showOptionDialog(null, this.content + " <= The clock time up.", "Time up",
              JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE,
              null, options, options[0]);

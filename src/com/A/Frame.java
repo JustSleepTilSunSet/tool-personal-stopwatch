@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.lang.Thread;
 import javax.swing.Timer;
+import java.awt.TextField;
 
 public class Frame{
     JFrame jf = null;
@@ -53,8 +54,21 @@ public class Frame{
         return this;
     }
 
+    public Frame setLeftPanel(){
+        this.leftPanel.setLayout(new BoxLayout(this.leftPanel, BoxLayout.Y_AXIS));
+        return this;
+    }
+
     public Frame setRightPanel(){
         this.rightPanel.setLayout(new BoxLayout(this.rightPanel, BoxLayout.Y_AXIS));
+        return this;
+    }
+
+    public Frame addButtonToRightPanel(JButton button){
+        TextField component = new TextField("hola", 1);
+        component.setMaximumSize(new Dimension(jf.getWidth(), jf.getHeight()/10));
+        this.rightPanel.add(component);
+        this.rightPanel.add(button);
         return this;
     }
 
@@ -75,10 +89,4 @@ public class Frame{
     public JPanel getRightPanel(){
         return this.rightPanel;
     }
-
-    public Frame setLeftPanel(){
-        this.leftPanel.setLayout(new BoxLayout(this.leftPanel, BoxLayout.Y_AXIS));
-        return this;
-    }
-
 }
