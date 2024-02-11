@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.lang.Thread;
 import javax.swing.Timer;
+import javax.swing.JOptionPane;
 
 public class TaskCheckBox implements ActionListener{
     Checkbox checkBox = null;
@@ -41,6 +42,13 @@ public class TaskCheckBox implements ActionListener{
         this.isTaskLabelMode = true;
     }
 
+    public void showMessageWin(){
+         Object[] options = { "OK" };
+        JOptionPane.showOptionDialog(null, this.content + " <= The clock time up.", "Time up",
+             JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE,
+             null, options, options[0]);
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
             if(this.checkBox.getState()){
@@ -55,6 +63,7 @@ public class TaskCheckBox implements ActionListener{
                     this.checkBox.setLabel("#"+this.assginTaskTag+": "+this.content+" done.");
                     this.currJPanel.remove(this.checkBox);
                     this.currJPanel.updateUI();
+                    showMessageWin();
                 }
                 this.residualSec--;
             }
