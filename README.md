@@ -1,8 +1,7 @@
 #### How to run with DEBUG mode?
   
-- In `Windows`
- 1. if you install C/C++ from [here](https://code.visualstudio.com/docs/languages/cpp)
- 2. Select `Run` from option bar on vscode.
- 3. Click `Start debuging`
- 4. Run through `gcc.exe`.
-- The application is for `Windows` only.
+- Develop
+ 1. javac src/com/A/*.java
+ 2. java -cp src com.A.Main
+ 3. jar cvfm demo.jar MANIFEST.MF -C src/ .
+ 4. java -jar demo.jar
