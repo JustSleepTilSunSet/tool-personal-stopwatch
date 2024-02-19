@@ -7,6 +7,7 @@ import java.awt.event.*;
 import java.lang.Thread;
 import javax.swing.Timer;
 import javax.swing.JOptionPane;
+import java.awt.Font;
 
 public class TaskCheckBox implements ActionListener{
     Checkbox checkBox = null;
@@ -17,8 +18,10 @@ public class TaskCheckBox implements ActionListener{
     Boolean isTaskLabelMode = false; // ResidualSec with task.
     Boolean isTaskMode = false; // The mode is a name of task.
     Boolean isSecMode = false; // ResidualSec.
+    Font defaultFont = new Font("Times New Roman",Font.BOLD,16);
     public TaskCheckBox(int residualSec){
         this.checkBox = new Checkbox(residualSec+"");
+        this.checkBox.setFont(defaultFont);
         this.residualSec = residualSec;
         this.assginTaskTag = Constants.TASK_TAG;
         Constants.TASK_TAG++;
@@ -28,6 +31,7 @@ public class TaskCheckBox implements ActionListener{
     public TaskCheckBox(String content){
         this.content = content;
         this.checkBox = new Checkbox(this.content);
+        this.checkBox.setFont(defaultFont);
         this.assginTaskTag = Constants.TASK_TAG;
         Constants.TASK_TAG++;
         this.isTaskMode = true;
@@ -36,6 +40,7 @@ public class TaskCheckBox implements ActionListener{
     public TaskCheckBox(int residualSec, String content){
         this.content = content;
         this.checkBox = new Checkbox("TASK#"+Constants.TASK_TAG+": "+this.content+residualSec+"s");
+        this.checkBox.setFont(defaultFont);
         this.assginTaskTag = Constants.TASK_TAG;
         Constants.TASK_TAG++;
         this.residualSec = residualSec;
